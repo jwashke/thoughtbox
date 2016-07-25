@@ -27,8 +27,4 @@ var view = {
     var li = '.link-' + id;
     $(li).append("<span class='alert alert-danger'>Something went Wrong</span>");
   }
-  ajaxSuccess: function(id) {
-    var li = '.link-' + id;
-    $(li).append("<span class='alert alert-success'>Something went Wrong</span>");
-  }
 };
