@@ -1,16 +1,19 @@
 <h1><%= current_user.email %>'s Links</h1>
-<div class="new-link-form form-group">
-  <h2>Create a new link</h2>
+<div class="new-link-form">
   <%= form_for(@link) do |f| %>
-    <%= f.text_field :name, placeholder: "Name" %>
-    <%= f.text_field :url, placeholder: "URL" %>
-    <%= f.submit "Create Link" %>
+    <div class="form-group">
+      <h3>Create a new link</h3>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :name, placeholder: "Name" %>
+      <%= f.text_field :url, placeholder: "URL" %>
+      <%= f.submit "Create Link", class: "btn btn-primary" %>
+    </div>
   <% end %>
 </div>
 
 <div class="form-group">
   <input id="searchBar" type="text" class="form-control" placeholder="Search" />
-  <button type="button" id="clearSearch" class="btn btn-primary">Clear</button>
 </div>
 
 <div class="btn-group" role="group" aria-label="...">
