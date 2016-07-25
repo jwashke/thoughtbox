@@ -13,13 +13,13 @@ RSpec.feature "User can create a link" do
   context "With a valid url and title" do
     scenario "The link is created adn they see it on the index" do
       user = create(:user)
-      ApplicationController.any_instance.stubs(:current_user).returns(:user)
+      ApplicationController.any_instance.stubs(:current_user).returns(user)
 
       visit root_path
 
       within (".new-link-form") do
-        fill_in :name, with: "My Link"
-        fill_in :url, with: "http://www.mylink.com"
+        fill_in "Name", with: "My Link"
+        fill_in "URL", with: "http://www.mylink.com"
         click_button "Create Link"
       end
 
