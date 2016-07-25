@@ -7,8 +7,22 @@
     <%= f.submit "Create Link" %>
   <% end %>
 </div>
-<ul>
-<% @links.each do |link| %>
-  <li><%= link.name %></li>
-  <li><a href=<%= link.url %>><%= link.url %></a></li>
-<% end %>
+<div class="links">
+  <ul>
+  <% @links.each do |link| %>
+        <% if link.read %>
+          <li class="link-<%= link.id %> read-link">
+            <%= link.name %>
+            <a href=<%= link.url %>><%= link.url %></a>
+            <button class="unread" id="<%= link.id %>">Mark as unread</button>
+          </li>
+        <% else %>
+          <li class="link-<%= link.id %> unread-link">
+            <%= link.name %>
+            <a href=<%= link.url %>><%= link.url %></a>
+            <button class="read" id="<%= link.id %>">Mark as read</button>
+          </li>
+        <% end %>
+  <% end %>
+  </ul>
+</div>
