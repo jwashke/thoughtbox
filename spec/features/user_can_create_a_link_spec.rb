@@ -43,7 +43,7 @@ RSpec.feature "User can create a link" do
       end
 
       expect(current_path).to eq(root_path)
-      expect(page).to have_content("URL is not valid")
+      expect(page).to have_content("Url is not a valid URL")
       expect(page).not_to have_content("My Link")
       expect(page).not_to have_content("http://www.mylink.com")
     end
