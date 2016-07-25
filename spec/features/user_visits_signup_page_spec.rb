@@ -35,7 +35,7 @@ RSpec.feature "User visits sign up page" do
       click_button "Sign Up"
 
       expect(current_path).to eq(new_user_path)
-      expect(page).to have_content("That email is already taken")
+      expect(page).to have_content("Email has already been taken")
     end
   end
 end
