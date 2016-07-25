@@ -15,12 +15,14 @@
             <%= link.name %>
             <a href=<%= link.url %>><%= link.url %></a>
             <button class="unread" id="<%= link.id %>">Mark as unread</button>
+            <%= link_to "Edit Link", edit_link_path(link) %>
           </li>
         <% else %>
           <li class="link-<%= link.id %> unread-link">
             <%= link.name %>
             <a href=<%= link.url %>><%= link.url %></a>
             <button class="read" id="<%= link.id %>">Mark as read</button>
+            <%= link_to "Edit Link", edit_link_path(link) %>
           </li>
         <% end %>
   <% end %>

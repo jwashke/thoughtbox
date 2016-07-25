@@ -5,7 +5,7 @@ RSpec.describe "PATCH /api/v1/links" do
     it "updates the read attribute to true and returns 204" do
       link = create(:link)
 
-      patch "/api/v1/links/#{link.id}", update: "read"
+      patch "/api/v1/links/#{link.id}", params: { update: "read" }
 
       expect(response.status).to eq(204)
       expect(Link.last.read).to be(true)

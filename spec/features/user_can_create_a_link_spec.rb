@@ -1,12 +1,3 @@
-# As an authenticated user viewing the main page (links#index), I should see a simple form to submit a link.
-#
-# The Link model should include:
-#
-# A valid URL location for the link
-# A title for the link
-# Additionally, all links have a read status that is either true or false. This column will default to false.
-#
-# Submitting an invalid link should result in an error message being displayed.
 require "rails_helper"
 
 RSpec.feature "User can create a link" do
