@@ -1,11 +1,13 @@
 require "rails_helper"
 
 RSpec.feature "User visits sign up page" do
-  context "With valid info" do
+  context "With valid email and matching passwords" do
     scenario "they are redirected to the links index " do
 
       visit root_path
-      click_link "Sign Up"
+      within ".login-form" do
+        click_link "Sign Up"
+      end
 
       fill_in "Email", with: "user@example.com"
       fill_in "Password", with: "password"
@@ -13,7 +15,9 @@ RSpec.feature "User visits sign up page" do
       click_button "Sign Up"
 
       expect(current_path).to eq(root_path)
-      expect(page).to have_content("Logout")
+      within ".navbar" do
+        expect(page).to have_content("Logout")
+      end
     end
   end
 end
