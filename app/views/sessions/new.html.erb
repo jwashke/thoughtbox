@@ -1,6 +1,9 @@
 <h1>Please Login to Continue</h1>
-<%= form_for(:session, url: login_path) do |f| %>
-  <%= f.text_field :email %>
-  <%= f.password_field :password %>
-  <%= f.submit "Login" %>
-<% end %>
+<div class="login-form">
+  <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.text_field :email %>
+    <%= f.password_field :password %>
+    <%= f.submit "Login" %>
+  <% end %>
+  <%= link_to "Sign Up", new_user_path %>
+</div>
