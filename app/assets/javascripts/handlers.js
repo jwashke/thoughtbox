@@ -16,5 +16,28 @@ var handlers = {
       console.log($link)
       inName || inLink ? $($link).show() : $($link).hide();
     });
+  },
+  showAll: function() {
+    var $links = $('.link');
+    $links.each(function(index, link) {
+      var $link = $(link)[0]
+      $($link).show();
+    });
+  },
+  showRead: function() {
+    this.showAll();
+    var $unreadLinks = $('.unread-link')
+    $unreadLinks.each(function(index, link) {
+      var $link = $(link)[0]
+      $($link).hide();
+    });
+  },
+  showUnread: function() {
+    this.showAll();
+    var $readLinks = $('.read-link')
+    $readLinks.each(function(index, link) {
+      var $link = $(link)[0]
+      $($link).hide();
+    });
   }
 }
