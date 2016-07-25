@@ -36,6 +36,7 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'mocha'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do
