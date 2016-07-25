@@ -1,6 +1,5 @@
 var view = {
   setupReadUnreadListeners: function() {
-    console.log('running')
     $('.links').on('click', function(event) {
       handlers.delegateLinkClick(event);
     });

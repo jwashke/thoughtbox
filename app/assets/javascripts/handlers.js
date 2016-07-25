@@ -1,9 +1,9 @@
 var handlers = {
   delegateLinkClick: function(event) {
     var target = event.target
-    if(target.className === 'read') {
+    if(target.className === 'btn btn-primary read') {
       linkService.markAsRead(event.target.id);
-    } else if (target.className === 'unread') {
+    } else if (target.className === 'btn btn-primary unread') {
       linkService.markAsUnread(event.target.id);
     }
   },
