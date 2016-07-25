@@ -39,5 +39,19 @@ var handlers = {
       var $link = $(link)[0]
       $($link).hide();
     });
+  },
+  sortLinksAlphabetically: function() {
+    var $links = $('.link')
+    $links.sort(function(a, b) {
+      if (a.children[0].innerText < b.children[0].innerText)
+        return -1;
+      if (a.children[0].innerText > b.children[0].innerText)
+        return 1;
+      return 0
+    });
+    $('.links').empty();
+    $links.each(function(index, link) {
+      $('.links').append(link)
+    })
   }
 }
