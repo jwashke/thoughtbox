@@ -19,7 +19,7 @@ RSpec.feature "User visits sign up page" do
     end
   end
 
-  context "With invalid info" do
+  context "With invalid email or password" do
     xscenario "They are redirected back to the sign up page with an error" do
       create(:user, email: "user@example.com")
 
@@ -29,12 +29,11 @@ RSpec.feature "User visits sign up page" do
       end
 
       fill_in "Email", with: "user@example.com"
-      fill_in "Password", with: "password"
-      fill_in "Password Confirmation", with: "password"
-      click_button "Sign Up"
+      fill_in "Password", with: "notpassword"
+      click_button "Login"
 
       expect(current_path).to eq(new_user_path)
-      expect(page).to have_content("Email has already been taken")
+      expect(page).to have_content("Invalid email/password combination")
     end
   end
 end
