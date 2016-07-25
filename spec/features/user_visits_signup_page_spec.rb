@@ -10,7 +10,7 @@ RSpec.feature "User visits sign up page" do
       fill_in "Email", with: "user@example.com"
       fill_in "Password", with: "password"
       fill_in "Password Confirmation", with: "password"
-      click_link "Submit"
+      click_button "Sign Up"
 
       expect(current_path).to eq(root_path)
       expect(page).to have_content("Logout")
