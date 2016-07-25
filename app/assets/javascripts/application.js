@@ -18,4 +18,5 @@
 $(document).ready(function() {
   view.setupReadUnreadListeners();
   view.setupSearchListener();
+  view.setupFilterListeners();
 });

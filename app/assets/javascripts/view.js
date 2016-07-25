@@ -12,6 +12,29 @@ var view = {
       handlers.searchBox(searchTerm);
     });
   },
+  setupFilterListeners: function() {
+    var _self = this;
+    $('#all-button').on('click', function() {
+      _self.removePrimaryFromButtons();
+      $('#all-button').addClass('btn-primary');
+      handlers.showAll();
+    });
+    $('#read-button').on('click', function() {
+      _self.removePrimaryFromButtons();
+      $('#read-button').addClass('btn-primary');
+      handlers.showRead();
+    });
+    $('#unread-button').on('click', function() {
+      _self.removePrimaryFromButtons();
+      $('#unread-button').addClass('btn-primary');
+      handlers.showUnread();
+    });
+  },
+  removePrimaryFromButtons: function() {
+    $('#all-button').removeClass('btn-primary');
+    $('#read-button').removeClass('btn-primary');
+    $('#unread-button').removeClass('btn-primary');
+  },
   markAsRead: function(id) {
     var li = '.link-' + id;
     var button = '#' + id;
