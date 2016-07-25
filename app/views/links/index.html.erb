@@ -9,6 +9,18 @@
 </div>
 <ul>
 <% @links.each do |link| %>
-  <li><%= link.name %></li>
-  <li><a href=<%= link.url %>><%= link.url %></a></li>
+    <li class="link-<%= link.id %>">
+      <% if link.read %>
+      <strike>
+        <%= link.name %>
+        <a href=<%= link.url %>><%= link.url %></a>
+        <button id="link-<%= link.id %>-unread">Mark as unread</button>
+      </strike>
+      <% else %>
+        <%= link.name %>
+        <a href=<%= link.url %>><%= link.url %></a>
+        <button id="link-<%= link.id %>-read">Mark as read</button>
+      <% end %>
+    </li>
 <% end %>
+</ul>
