@@ -53,7 +53,7 @@ RSpec.feature "User visits sign up page" do
       click_button "Sign Up"
 
       expect(current_path).to eq(new_user_path)
-      expect(page).to have_content("...")
+      expect(page).to have_content("Password confirmation doesn't match Password")
     end
   end
 end
