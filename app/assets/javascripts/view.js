@@ -12,6 +12,11 @@ var view = {
       handlers.searchBox(searchTerm);
     });
   },
+  setupSortListeners: function() {
+    $('#sort-button').on('click', function() {
+      handlers.sortLinksAlphabetically();
+    });
+  },
   setupFilterListeners: function() {
     var _self = this;
     $('#all-button').on('click', function() {
