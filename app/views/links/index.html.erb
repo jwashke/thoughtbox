@@ -7,24 +7,28 @@
     <%= f.submit "Create Link" %>
   <% end %>
 </div>
+
+<input id="searchBar" type="text" class="form-control" placeholder="Search" />
+<button type="button" id="clearSearch" class="btn btn-primary">Clear</button>
+
 <div class="links">
-  <ul>
+  <div class="list-group">
   <% @links.each do |link| %>
         <% if link.read %>
-          <li class="link-<%= link.id %> read-link">
-            <%= link.name %>
-            <a href=<%= link.url %>><%= link.url %></a>
+          <div class="link-<%= link.id %> read-link link list-group-item">
+            <h4><%= link.name %></h4>
+            <p><a href=<%= link.url %>><%= link.url %></a></p>
             <button class="unread" id="<%= link.id %>">Mark as unread</button>
             <%= link_to "Edit Link", edit_link_path(link) %>
-          </li>
+          </div>
         <% else %>
-          <li class="link-<%= link.id %> unread-link">
-            <%= link.name %>
-            <a href=<%= link.url %>><%= link.url %></a>
+          <div class="link-<%= link.id %> unread-link link">
+            <h4><%= link.name %></h4>
+            <p><a href=<%= link.url %>><%= link.url %></a></p>
             <button class="read" id="<%= link.id %>">Mark as read</button>
             <%= link_to "Edit Link", edit_link_path(link) %>
-          </li>
+          </div>
         <% end %>
   <% end %>
-  </ul>
+  </div>
 </div>

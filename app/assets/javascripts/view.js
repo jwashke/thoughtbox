@@ -5,6 +5,13 @@ var view = {
       handlers.delegateLinkClick(event);
     });
   },
+  setupSearchListener: function() {
+    $('#searchBar').on('input', function() {
+      console.log(searchTerm)
+      var searchTerm = this.value;
+      handlers.searchBox(searchTerm);
+    });
+  },
   markAsRead: function(id) {
     var li = '.link-' + id;
     var button = '#' + id;
